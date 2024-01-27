@@ -8,9 +8,36 @@
     <title>Flask App</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to TNTrading</h1>
-        <p> What are you interested in? <a href="{{ url_for('launch') }}">Get Started</a> antalytics, guidance, news, and more! </p>
-    </div>
+    <nav>
+        <div class="logo">TNTrading</div>
+        <div class="nav-items">
+            <a href="/">Home</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="column-left">
+                <h1>Welcome to TNTrading</h1>
+                <p> Analytics for beginners, the latest news,guidance, and more! </p>
+                <button onclick ="redirectToLaunchPage()"> Get Started </button>
+                <script>
+                    function redirectToLaunchPage(){
+                        window.location.href = "launch"
+                    }
+                </script>
+            </div>
+
+            <div class="column-right">
+                <img src ="https://us.123rf.com/450wm/nicedream/nicedream1803/nicedream180300008/nicedream180300008-stock-market-or-forex-trading-graph-in-graphic-concept-suitable-for-financial-investment-or-economic.jpg?ver=6" alt ="Market Photo"
+                <class = "hero-image"
+
+            </div>
+        </div>
+    </section>
 </body>
 </html>
