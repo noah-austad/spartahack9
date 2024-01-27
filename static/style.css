@@ -1,11 +1,91 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+nav{
+    height: 80px;
+    background: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2)
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 1.5rem;
+}
+
+nav a:hover{
+    color: cyan;
+}
+.hero{
+    background: lightgreen;
+}
+
 .container {
-    text-align: center;
-    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    /*text-align: center;*/
+    padding: 0rem calc((100vw - 1300px) / 2)
+}
+
+.column-left{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #000;
+    padding: 0rem 2rem;
+}
+
+.column-left h1{
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.colum-left p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+button{
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #ffffff;
+    background: black;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button:hover{
+    background: #fff;
+    color: #000;
+}
+
+.column-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 2rem;
+}
+
+.hero-image{
+    width: 100%;
+    height: 100%;
 }
