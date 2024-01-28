@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleFormat.css') }}">
     <title>Ask for Ticker</title>
 </head>
 <body>
 
-    <h1>Here are some trending stocks:</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Ticker</th>
-                <th>Price</th>
-                <th>Change Amount</th>
-                <th>Change Percentage</th>
-                <th>Volume</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in table %}
-                <tr>
-                    <td>{{ item.ticker }}</td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.change_amount }}</td>
-                    <td>{{ item.change_percentage }}</td>
-                    <td>{{ item.volume }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h2>Choose one of the following and enter the ticker, or enter the ticker of a company not listed:</h2>
-    <form action="/strategies" method="post">
-        <label for="user_input">Ticker:</label>
-        <input type="text" id="user_input" name="user_input" required>
-        <button type="submit">Submit</button>
-    </form>
+    <nav>
+        <div class="logo">TNTrading</div>
+        <div class="nav-items">
+            <a href="/">GO GREEN!</a>
+        </div>
+    </nav>
 
+    <section class="hero">
+        <div class="container">
+            <h1>Here are some trending stocks:</h1>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Price</th>
+                        <th>Change Amount</th>
+                        <th>Change Percentage</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in table %}
+                        <tr>
+                            <td>{{ item.ticker }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.change_amount }}</td>
+                            <td>{{ item.change_percentage }}</td>
+                            <td>{{ item.volume }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h3>Choose a company's ticker from above or any other eligible ticker.</h3>
+            <form action="/strategies" method="post">
+                <label for="user_input">Ticker:</label>
+                <input type="text" id="user_input" name="user_input" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
