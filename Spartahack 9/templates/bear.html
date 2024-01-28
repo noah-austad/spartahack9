@@ -17,6 +17,17 @@
     <section class="hero">
         <div class="container">
             <h1> Bear Spread </h1>
+            <h2> A bear spread consists of two put options, buying a put with strike E1, and selling a put with E2. </h2>
+            <h3>E2 should be roughly equal to the current stock price, and E1 is the price that you are betting the stock will fall to.</h3>
+            <form action="/math" method="post">
+                <label for="e1">Enter E1:</label><br>
+                <input type="number" id="e1" name="e1"><br>
+                <label for="e2">Enter E2:</label><br>
+                <input type="number" id="e2" name="e2"><br>
+                <label for = "S">Enter the current stock price:</label><br>
+                <input type="number" id="S" name="S"><br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
 
     </section>
