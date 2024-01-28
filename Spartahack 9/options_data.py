@@ -26,13 +26,10 @@ class stock:
         self.price_history=close_data
 
 def trending_req():
-    # url = 'https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=CI7ESVAE610SFJNF'
-    # r = requests.get(url)
-    # data = r.json()
-    # data=data["most_actively_traded"]
-    # return(data)
-    f=open('C:\Users\noahp\OneDrive\Documents\Spartahack 9\info.json')
-    data=json.load(f)
-    active=json.dumps(data['most_actively_traded'])
+    url = 'https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=CI7ESVAE610SFJNF'
+    r = requests.get(url)
+    data = r.json()
+    data=data["most_actively_traded"]
+    return(data)
 
     return(active)
