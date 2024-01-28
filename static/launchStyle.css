@@ -29,7 +29,10 @@ nav a {
 
 .container {
     height: 95vh;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
     text-align: center;
+    padding: 0rem calc((100vw - 1300px) / 2)
 }
 
 /*h1 {*/
