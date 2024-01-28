@@ -2,6 +2,7 @@ from options_data import stock, trending_req
 from flask import Flask, render_template, request
 from json2table import convert
 import json
+from pricing import bearspread, bullspread, butterflyspread
 
 app = Flask(__name__)
 
@@ -48,6 +49,21 @@ def bear():
 def butterfly():
     return render_template('butterfly.html')
 
+@app.route('/math', methods=['POST'])
+def math():
+    e1 = request.form.get('e1')
+    e2 = request.form.get('e2')
+    s=request.form.get('S')
+    referer = request.headers.get('Referer')
+    print(referer)
+    if 'bear' in referer:
+        cost=bearspread(e1,e2,s)
+    elif 'bull' in referer:
+        cost=bullspread(e1,e2,s)
+    elif 'butterfly' in referer:
+        cost=butterflyspread(e1,e2,s)
+    else:cost=0
+    return render_template('math.html',cost=cost)
 
 if __name__ == '__main__':
     app.run(port=5000)
