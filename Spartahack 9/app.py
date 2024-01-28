@@ -27,6 +27,26 @@ def strategies():
     asset.update_prices()
     return render_template('strategies.html', recent=asset.price_history, ticker=asset.ticker)
 
+@app.route('/education')
+def education():
+    return render_template('education.html')
+
+@app.route('/news')
+def news():
+    return render_template('news.html')
+
+@app.route('/bull')
+def bull():
+    return render_template('bull.html')
+
+@app.route('/bear')
+def bear():
+    return render_template('bear.html')
+
+@app.route('/butterfly')
+def butterfly():
+    return render_template('butterfly.html')
+
 
 if __name__ == '__main__':
     app.run(port=5000)
