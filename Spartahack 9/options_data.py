@@ -31,7 +31,7 @@ def trending_req():
     # data = r.json()
     # data=data["most_actively_traded"]
     # return(data)
-    f=open('C:\\Users\\noahp\\Downloads\\info.json')
+    f=open('C:\Users\noahp\OneDrive\Documents\Spartahack 9\info.json')
     data=json.load(f)
     active=json.dumps(data['most_actively_traded'])
 
