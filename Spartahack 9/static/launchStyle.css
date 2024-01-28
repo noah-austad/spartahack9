@@ -1,0 +1,72 @@
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+}
+
+nav {
+    height: 80px;
+    background: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 1.5rem;
+}
+
+.container {
+    height: 95vh;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    text-align: center;
+    padding: 0rem calc((100vw - 1300px) / 2)
+}
+
+/*h1 {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.category {
+    border: 1px solid #ddd;
+    /*padding: 20px;*/
+    text-align: center;
+    width: 45%; /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+button{
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #ffffff;
+    background: black;
+    cursor: pointer;
+    border-radius: 50px;
+}
+button:hover{
+    background: #fff;
+    color: #000;
+}
+
+.villain {
+    background: lightgreen;
+}

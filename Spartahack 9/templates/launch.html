@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='launchstyle.css') }}">
+    <title>Flask App</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">TNTrading</div>
+        <div class="nav-items">
+            <a href="/">GO GREEN!</a>
+        </div>
+    </nav>
+
+    <section class="villain">
+        <div class="container">
+            <h1>What are you looking for?</h1>
+
+            <div class="categories">
+                <div class="category">
+                    <h2>Buy and view Options!</h2>
+                    <p>View trending stocks and company data!</p>
+                    <button onclick ="redirectToTrend()"> Click Here! </button>
+                    <script>
+                        function redirectToTrend(){
+                            window.location.href = "trending"
+                        }
+                    </script>
+                </div>
+
+                <div class="category">
+                    <h2>What is an option?</h2>
+                    <p>helpful tips and guidance!</p>
+                    <button onclick ="redirectToOption()"> Click Here! </button>
+                    <script>
+                        function redirectToOption(){
+                            window.location.href = "launch"
+                        }
+                    </script>
+                </div>
+
+                <div class="category">
+                    <h2>Recent News?</h2>
+                    <p>View recent trends and market news!</p>
+                    <button onclick ="redirectToNews()"> Click Here! </button>
+                    <script>
+                        function redirectToNews(){
+                            window.location.href = "launch"
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
