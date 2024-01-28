@@ -3,19 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleFormat.css') }}">
     <title>Route Changer</title>
+    <style>
+        /* Add your styles for the pop-up here */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>You selected {{ticker}}</h1>
-    <h2>Here's a graph of their recent stock prices: (display graph here)</h2>
-    <h3>Choose one of the following trading strategies:</h3>
+    <nav>
+        <div class="logo">TNTrading</div>
+        <div class="nav-items">
+            <a href="/">GO GREEN!</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <h1>You selected {{ticker}}</h1>
+            <h2>Here's a graph of their recent stock prices: (display graph here)</h2>
+            <h4>Choose one of the following trading strategies:</h4>
 
-    <a href="/bull"><button>Bull Spread</button></a>
-    <a href="/bear"><button>Bear Spread</button></a>
-    <a href="/butterfly"><button>Butterfly Spread</button></a>
+            <!-- Add data-popup attribute with a unique ID for each button -->
+            <a href="/bull"><button>Bull Spread</button></a>
+            <a href="/bear"><button>Bear Spread</button></a>
+            <a href="/butterfly"><button>Butterfly Spread</button></a>
 
-    <h4>Don't know how to choose a strategy? Click here to learn more!</h4>
-    
+            <h4>Don't know how to choose a strategy? <a href="#" onclick="showPopup('learnMorePopup')">Click here to learn more!</a></h4>
+
+        </div>
+    </section>
+
+
+    <div id="learnMorePopup" class="popup">
+        <!-- Content for the Learn More pop-up -->
+        Learn More Content
+    </div>
+
+<script>
+        // JavaScript function to show pop-ups
+        function showPopup(popupId) {
+            var popup = document.getElementById(popupId);
+            if (popup) {
+                popup.style.display = "block";
+
+                // Add an event listener to the document
+                function hidePopup(event) {
+                    if (!popup.contains(event.target)) {
+                        popup.style.display = 'none';
+                        document.removeEventListener('click', hidePopup);
+                    }
+                }
+
+                // Add the event listener after a brief delay to ensure the pop-up is displayed
+                setTimeout(function () {
+                    document.addEventListener('click', hidePopup);
+                }, 100);
+            }
+        }
+</script>
 </body>
 </html>
