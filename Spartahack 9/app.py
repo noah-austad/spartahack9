@@ -1,6 +1,7 @@
 from options_data import stock, trending_req
 from flask import Flask, render_template, request
 from json2table import convert
+import json
 
 app = Flask(__name__)
 
@@ -14,10 +15,9 @@ def launch():
 
 @app.route('/trending')
 def trending():
-    data=trending_req()
-    build_direction="LEFT_TO_RIGHT"
-    table_attributes={"style" : "width:100%"}
-    table=convert(data,build_direction=build_direction,table_attributes=table_attributes)
+    raw_data=trending_req()
+    table=json.loads(raw_data)
+    
     return render_template('trending.html',table=table)
 
 @app.route('/strategies', methods=['POST'])
@@ -26,14 +26,6 @@ def strategies():
     asset=stock(ticker_str)
     asset.update_prices()
     return render_template('strategies.html', recent=asset.price_history, ticker=asset.ticker)
-
-@app.route('/education')
-def education():
-    return render_template('education.html')
-
-@app.route('/news')
-def news():
-    return render_template('news.html')
 
 
 if __name__ == '__main__':
