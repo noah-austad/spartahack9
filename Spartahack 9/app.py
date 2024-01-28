@@ -24,8 +24,9 @@ def trending():
 def strategies():
     ticker_str = request.form['user_input']
     asset=stock(ticker_str)
-    asset.update_prices()
-    return render_template('strategies.html', recent=asset.price_history, ticker=asset.ticker)
+    #asset.update_prices()
+    recent=['187.4200', '190.4300', '173.9300', '173.9400', '172.8300', '171.4800', '166.8400', '166.0800', '166.9600', '165.8000', '162.1600', '161.2300', '160.0800', '161.1400']
+    return render_template('strategies.html', recent=recent, ticker=asset.ticker)
 
 @app.route('/education')
 def education():
